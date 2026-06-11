@@ -14,14 +14,16 @@ class ContatoRepository
      */
     public function salvar(array $dados): bool
     {
-        $sql = 'INSERT INTO contatos (nome, email, mensagem)
-                VALUES (:nome, :email, :mensagem)';
+        $sql = 'INSERT INTO contatos
+                (nome, email, telefone, mensagem)
+                VALUES (:nome, :email, :telefone, :mensagem)';
 
         $comando = $this->pdo->prepare($sql);
-
+        
         return $comando->execute([
             ':nome' => $dados['nome'],
             ':email' => $dados['email'],
+            ':telefone' => $dados['telefone'],
             ':mensagem' => $dados['mensagem']
         ]);
     }
