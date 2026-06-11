@@ -82,6 +82,9 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <footer>
+                    <p>Sistema de Gerenciamento de Contatos — versão 1.0</p>
+                    </footer>
                 </div>
             <?php endif; ?>
         </section>
