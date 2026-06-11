@@ -10,6 +10,7 @@
     <main class="container">
         <section class="card">
             <h1>Cadastro de Contatos</h1>
+            <p>Utilize está página para consultar e gerenciar os contatod cadastrados.</p>
 
             <p class="descricao">
                 Aplicação didática organizada em camadas:
