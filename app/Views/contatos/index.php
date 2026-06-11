@@ -10,7 +10,8 @@
     <main class="container">
         <section class="card">
             <h1>Cadastro de Contatos</h1>
-
+            <p>Utilize esta página para consultar e gerenciar os contatos
+cadastrados</p>
             <p class="descricao">
                 Aplicação didática organizada em camadas:
                 <strong>View → Controller → Service → Repository → Banco de Dados</strong>.
