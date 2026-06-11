@@ -39,4 +39,15 @@ class ContatoRepository
 
         return $comando->fetchAll();
     }
+
+    /**
+     * Exclui um contato do banco de dados pelo ID.
+     */
+    public function excluir(int $id): bool
+    {
+        $sql = 'DELETE FROM contatos WHERE id = :id';
+        $comando = $this->pdo->prepare($sql);
+        
+        return $comando->execute([':id' => $id]);
+    }
 }

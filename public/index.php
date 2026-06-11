@@ -1,5 +1,7 @@
 <?php
+// public/index.php
 
+// Correção: Adicionada a barra '/' antes de '..' para o caminho funcionar
 require_once __DIR__ . '/../config/bootstrap.php';
 
 $repository = new ContatoRepository();
@@ -15,4 +17,5 @@ $contatos = $dadosPagina['contatos'];
 $mensagem = $dadosPagina['mensagem'];
 $tipoMensagem = $dadosPagina['tipoMensagem'];
 
+// Carrega o arquivo HTML da View
 require __DIR__ . '/../app/Views/contatos/index.php';

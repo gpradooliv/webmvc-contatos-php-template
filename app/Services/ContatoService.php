@@ -53,7 +53,7 @@ class ContatoService
                 return ['erro' => 'Não foi possível salvar o contato.'];
             }
 
-            return ['sucesso' => 'Contato salvo com sucesso.'];
+            return ['sucesso' => 'Contato保存 com sucesso.'];
 
         } catch (Throwable $erro) {
             /*
@@ -61,6 +61,32 @@ class ContatoService
              * Não devemos expor detalhes internos do banco ao usuário.
              */
             return ['erro' => 'Ocorreu um erro ao salvar o contato.'];
+        }
+    }
+
+    /**
+     * Valida o ID e solicita a exclusão ao Repository.
+     */
+    public function deletar(array $dados): array
+    {
+        $id = (int) ($dados['id'] ?? 0);
+
+        if ($id <= 0) {
+            return ['erro' => 'ID de contato inválido.'];
+        }
+
+        try {
+            $excluido = $this->repository->excluir($id);
+
+            if (!$excluido) {
+                return ['erro' => 'Não foi possível excluir o contato.'];
+            }
+
+            return ['sucesso' => 'Contato excluído com sucesso.'];
+
+        } catch (Throwable $erro) {
+            // Em produção, o erro técnico deve ser registrado em log
+            return ['erro' => 'Ocorreu um erro ao excluir o contato.'];
         }
     }
 }

@@ -68,6 +68,7 @@
                                 <th>E-mail</th>
                                 <th>Mensagem</th>
                                 <th>Cadastrado em</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,6 +79,14 @@
                                     <td><?= htmlspecialchars($contato['email']) ?></td>
                                     <td><?= htmlspecialchars($contato['mensagem']) ?></td>
                                     <td><?= htmlspecialchars($contato['criado_em']) ?></td>
+                                    <td>
+                                        <form action="excluir_contato.php" method="post" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja excluir este contato?');">
+                                            <input type="hidden" name="id" value="<?= htmlspecialchars((string) $contato['id']) ?>">
+                                            <button type="submit" style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px;">
+                                                Excluir
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

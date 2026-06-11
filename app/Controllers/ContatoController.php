@@ -49,4 +49,22 @@ class ContatoController
 
         exit;
     }
+
+    /**
+     * Recebe a requisição de exclusão, chama o Service e decide a resposta HTTP.
+     */
+    public function excluir(array $dados): void
+    {
+        $resultado = $this->service->deletar($dados);
+
+        $tipoMensagem = isset($resultado['sucesso']) ? 'sucesso' : 'erro';
+        $mensagem = $resultado[$tipoMensagem] ?? 'Ocorreu um erro inesperado.';
+
+        header(
+            'Location: index.php?tipo=' . urlencode($tipoMensagem)
+            . '&msg=' . urlencode($mensagem)
+        );
+
+        exit;
+    }
 }
