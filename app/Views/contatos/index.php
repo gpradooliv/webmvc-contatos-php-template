@@ -10,7 +10,6 @@
     <main class="container">
         <section class="card">
             <h1>Cadastro de Contatos</h1>
-
             <p class="descricao">
                 Aplicação didática organizada em camadas:
                 <strong>View → Controller → Service → Repository → Banco de Dados</strong>.
@@ -55,6 +54,7 @@
 
         <section class="card">
             <h2>Contatos cadastrados</h2>
+            <p>Utilize esta página para consultar e gerenciar os contatos cadastrados.</p>
 
             <?php if (count($contatos) === 0): ?>
                 <p>Nenhum contato cadastrado.</p>
