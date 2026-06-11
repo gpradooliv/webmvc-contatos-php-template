@@ -17,7 +17,15 @@ class ContatoService
         $nome = trim((string) ($dados['nome'] ?? ''));
         $email = trim((string) ($dados['email'] ?? ''));
         $mensagem = trim((string) ($dados['mensagem'] ?? ''));
+        $telefone = trim((string) ($dados['telefone'] ?? ''));
+        $telefoneSemEspacos = preg_replace('/\s+/', '', $telefone);
 
+        if ($telefone === '') {
+            return ['erro' => 'O telefone é obrigatório.'];
+        }
+        if (mb_strlen($telefoneSemEspacos) < 8) {
+            return ['erro' => 'O telefone deve possuir pelo menos 8 caracteres.'];
+        }
         if ($nome === '') {
             return ['erro' => 'O nome é obrigatório.'];
         }
@@ -54,7 +62,6 @@ class ContatoService
             }
 
             return ['sucesso' => 'Contato salvo com sucesso.'];
-
         } catch (Throwable $erro) {
             /*
              * Em uma aplicação real, o erro técnico deve ser registrado em log.
