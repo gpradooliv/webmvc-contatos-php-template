@@ -1,12 +1,5 @@
+# Aplicação Web em Camadas com PHP — Cadastro de Contatos
 
-# Projeto desenvolvido pelo Grupo Alfa 
-
-## Membros do Grupo 🙎
-
-- Felipe Alcantara 
-- Felipe Nogueira
-- Luiz Felipe Neres
-- Jonata
 Projeto didático para a disciplina **Fundamentos de Sistemas para Internet**.
 
 A aplicação demonstra, de forma simples, como organizar uma aplicação PHP em camadas:
@@ -23,7 +16,7 @@ Repository
 Banco de Dados
 ```
 
-## Funcionalidades disponíveis 👨‍💻
+## Funcionalidades disponíveis
 
 - cadastrar contato;
 - validar nome, e-mail e mensagem;
@@ -31,7 +24,7 @@ Banco de Dados
 - listar os contatos cadastrados;
 - exibir mensagens de sucesso ou erro.
 
-## Tecnologias ⌨️
+## Tecnologias
 
 - PHP 8;
 - Apache;
@@ -40,7 +33,7 @@ Banco de Dados
 - HTML e CSS;
 - XAMPP como ambiente local sugerido.
 
-## Estrutura do projeto 🚨
+## Estrutura do projeto
 
 ```text
 webmvc-contatos-php-template/
@@ -83,7 +76,7 @@ webmvc-contatos-php-template/
 └── README.md
 ```
 
-## Como executar com XAMPP ❗
+## Como executar com XAMPP
 
 1. Copie a pasta `webmvc-contatos-php-template` para:
 
